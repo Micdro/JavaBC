@@ -9,9 +9,9 @@ public class ReadingUserInputChallenge {
      */
     public static void main(String[] args)
     {
-        int sum = 0;
-        int number = 0;
-        int totalNumbers;
+        double sum = 0;
+        double number = 0;
+        double totalNumbers;
         boolean valid = true;
         Scanner scanner = new Scanner(System.in);
 
@@ -20,12 +20,12 @@ public class ReadingUserInputChallenge {
             valid = isValid(number);
             sum += number;
         }
-        catch (Exception e)
+        catch (NumberFormatException nfe)
         {
             System.out.println("Characters not allowed! Try again.");
         }
 
-        totalNumbers = Integer.parseInt(scanner.nextLine());
+        totalNumbers = Double.parseDouble(scanner.nextLine());
         for (int i = 1; i < totalNumbers + 1; i++)
         {
             valid = false;
@@ -33,7 +33,7 @@ public class ReadingUserInputChallenge {
             do
             {
                 try{
-                    number = Integer.parseInt(scanner.nextLine());
+                    number = Double.parseDouble(scanner.nextLine());
                     valid = isValid(number);
                     sum += number;
                 }
@@ -53,7 +53,7 @@ public class ReadingUserInputChallenge {
      * @param number is the number that the user input
      * @return true if between the parameters
      */
-    public static boolean isValid(int number)
+    public static boolean isValid(double number)
     {
         return (number > 0 && number < Year.now().getValue());
     }
