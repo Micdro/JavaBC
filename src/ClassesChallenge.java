@@ -40,7 +40,7 @@ public class ClassesChallenge {
                     personalAccount.withdrawFunds(amount);
                     System.out.println("New Account balance = $" + personalAccount.getAccountBalance());
             }
-            case 4 ->{
+                case 4 ->{
                 System.out.println("Accound number " + personalAccount.getAccountNumber());
                 System.out.println("Account Holders name: " + personalAccount.getCustomerName());
                 System.out.println("Account holders phone number: " + personalAccount.getPhoneNUmber());
