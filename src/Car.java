@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 /**
  * This is the Car class which will return the current vehicle type.
  */
@@ -21,7 +23,16 @@ public class Car {
 
     public void setMake(String make)
     {
-        this.make = make;
+        if (make == null) make = "Unknown";
+        //String lowercaseMake = make.toLowerCase();
+        switch (make.toLowerCase())
+        {
+            case "holden", "porsche", "tesla" -> this.make = make;
+            default ->
+            {
+                this.make = "Unsupported";
+            }
+        }
     }
 
     public String getMake()
