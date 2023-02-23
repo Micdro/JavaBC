@@ -1,6 +1,6 @@
 public class BankAccount {
     private int accountNumber = 0;
-    private double acountBalance = 0;
+    private double accountBalance = 0;
     private String customerName = "";
     private String customerEmail = "";
     private int phoneNUmber = 0;
@@ -13,12 +13,12 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-    public double getAcountBalance() {
-        return acountBalance;
+    public double getAccountBalance() {
+        return accountBalance;
     }
 
-    public void setAcountBalance(double acountBalance) {
-        this.acountBalance = acountBalance;
+    public void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     public String getCustomerName() {
@@ -46,11 +46,17 @@ public class BankAccount {
     }
 
     public void depositFunds(double amount) {
-
+        this.accountBalance = this.accountBalance + amount;
     }
 
     public void withdrawFunds(double amount){
-
+    if (this.accountBalance - amount < 0)
+    {
+        System.out.println("Not enough Money in account");
+    }
+    else {
+        this.accountBalance = this.accountBalance - amount;
+    }
     }
 
 }
