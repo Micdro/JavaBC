@@ -1,9 +1,9 @@
 public class BankAccount {
-    private int accountNumber = 0;
-    private double accountBalance = 0;
-    private String customerName = "";
-    private String customerEmail = "";
-    private int phoneNUmber = 0;
+    private int accountNumber;
+    private double accountBalance;
+    private String customerName;
+    private String customerEmail;
+    private String phoneNUmber;
 
     public int getAccountNumber() {
         return accountNumber;
@@ -37,11 +37,11 @@ public class BankAccount {
         this.customerEmail = customerEmail;
     }
 
-    public int getPhoneNUmber() {
+    public String getPhoneNUmber() {
         return phoneNUmber;
     }
 
-    public void setPhoneNUmber(int phoneNUmber) {
+    public void setPhoneNUmber(String phoneNUmber) {
         this.phoneNUmber = phoneNUmber;
     }
 
