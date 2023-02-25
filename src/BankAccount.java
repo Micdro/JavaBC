@@ -3,7 +3,21 @@ public class BankAccount {
     private double accountBalance;
     private String customerName;
     private String customerEmail;
-    private String phoneNUmber;
+    private String phoneNumber;
+
+    public BankAccount() {
+        System.out.println("Empty Constructor called\n");
+    }
+
+    public BankAccount(int number, double balance, String customerName, String customerEmail,
+                       String phoneNumber) {
+        System.out.println("Account constructor with parameters called\n");
+        this.accountNumber = number;
+        this.accountBalance = balance;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.phoneNumber = phoneNumber;
+    }
 
     public int getAccountNumber() {
         return accountNumber;
@@ -38,11 +52,11 @@ public class BankAccount {
     }
 
     public String getPhoneNUmber() {
-        return phoneNUmber;
+        return phoneNumber;
     }
 
     public void setPhoneNUmber(String phoneNUmber) {
-        this.phoneNUmber = phoneNUmber;
+        this.phoneNumber = phoneNUmber;
     }
 
     public void depositFunds(double amount) {

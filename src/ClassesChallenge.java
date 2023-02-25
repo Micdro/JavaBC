@@ -10,6 +10,9 @@ public class ClassesChallenge {
         boolean inMenu = true;
         Scanner scanner = new Scanner(System.in);
         BankAccount personalAccount = new BankAccount();
+        BankAccount michaelsAccount = new BankAccount(12345, 1000, "Alice", "aadr@yahoo.com",
+                "516-243-5674");
+        michaelsAccount.setAccountBalance(0);
         int accountNumber = new Random().nextInt(90000) + 10000;
         personalAccount.setAccountNumber(accountNumber);
         double amount;
@@ -41,7 +44,7 @@ public class ClassesChallenge {
                     System.out.println("New Account balance = $" + personalAccount.getAccountBalance());
             }
                 case 4 ->{
-                System.out.println("Accound number " + personalAccount.getAccountNumber());
+                System.out.println("Account number " + personalAccount.getAccountNumber());
                 System.out.println("Account Holders name: " + personalAccount.getCustomerName());
                 System.out.println("Account holders phone number: " + personalAccount.getPhoneNUmber());
                 System.out.println("Account holders email: " + personalAccount.getCustomerEmail());
