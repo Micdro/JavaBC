@@ -12,6 +12,9 @@ public class ClassesChallenge {
         BankAccount personalAccount = new BankAccount();
         BankAccount michaelsAccount = new BankAccount(12345, 1000, "Alice", "aadr@yahoo.com",
                 "516-243-5674");
+        //Testing constructor with only 3 inputs
+        BankAccount defaultAccount = new BankAccount("Amelia", "Amelia@aol.com", "555-545-5265");
+        System.out.println(defaultAccount.getAccountNumber());
         michaelsAccount.setAccountBalance(0);
         int accountNumber = new Random().nextInt(90000) + 10000;
         personalAccount.setAccountNumber(accountNumber);
