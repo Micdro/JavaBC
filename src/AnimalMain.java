@@ -10,6 +10,9 @@ public class AnimalMain {
     doAnimalStuff(yorkie, "Fast");
     Dog retriever = new Dog("Labrador retriever", 65, "floppy", "Swimmer");
     doAnimalStuff(retriever, "slow");
+
+    Dog wolf = new Dog("wolf", 40);
+    doAnimalStuff(wolf, "slow");
     }
 
     /**
