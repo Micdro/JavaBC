@@ -18,6 +18,14 @@ public class Worker {
 
         Employee alice = new Employee("Alice", "04/23/2020", "01/01/2022");
         System.out.println(alice);
+        SalariedEmployee alexis = new SalariedEmployee("Alexis", "04/20/1989", 10023,
+                "06/31/2019", 90000, false);
+        System.out.println("Alexis's paycheck = $" + alexis.collectPay());
+        alexis.retire();
+        System.out.println("Alexis's pension check = $" + alexis.collectPay());
+        HourlyEmployee amelia = new HourlyEmployee("Amelia", "04/23/2021", 1232231, "03/10/2023", 15);
+        System.out.println("Amelia's paycheck = $" + amelia.collectPay());
+        System.out.println("Amelia's double pay = $" + amelia.getDoublePay());
     }
     public int getAge(){
         int currentYear =  LocalDate.now().getYear();
@@ -71,9 +79,17 @@ class SalariedEmployee extends Employee{
         this.isRetired = isRetired;
     }
 
+    @Override
+    public double collectPay(){
+        double paycheck = annualSalary/26;
+        double adjustedPay = (isRetired) ? 0.9 * paycheck : paycheck;
 
-    private void retire(){
+        return (int)adjustedPay;
+    }
 
+    public void retire(){
+        terminate("12/12/2025");
+        isRetired = true;
     }
 }
 
@@ -85,7 +101,11 @@ class HourlyEmployee extends Employee{
         this.hourlyPayRate = hourlyPayRate;
     }
 
-    private void getDoublePay(){
-
+    @Override
+    public double collectPay(){
+        return hourlyPayRate * 40;
+    }
+    public double getDoublePay(){
+        return collectPay() * 2;
     }
 }
